@@ -305,24 +305,16 @@
 
   .hero {
     background-color: var(--color-hero-bg);
-    background-image: url("/img/hero-wave.svg");
-    background-repeat: no-repeat;
-    background-position: center calc(100% + 5px);
-    background-size: 1440px auto;
     color: var(--color-text-light);
-
-    @media (width >= calc(1000 / 16 * 1rem)) {
-      background-position: -5px calc(100% + 5px);
-      background-size: calc(100% + 10px) auto;
-    }
 
     .hero__wrapper {
       display: grid;
-      padding-block: 30px 120px;
+      padding-block: 30px 60px;
 
       @media (width >= calc(1000 / 16 * 1rem)) {
         grid-template-columns: 6fr 5fr;
-        padding-block: 80px 0;
+        align-items: center;
+        padding-block: 40px 80px;
       }
     }
 
