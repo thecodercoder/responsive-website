@@ -42,6 +42,7 @@
     --font-size-pre-title: var(--fs-20);
     --font-size-quote: var(--fs-24);
     --font-size-quote-author: var(--fs-20);
+    --font-size-form: var(--fs-18);
 
     @media (width >= calc(600 / 16 * 1rem)) {
       --font-size-topnav: var(--fs-16);
@@ -190,6 +191,14 @@
     display: block;
   }
 
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    border: none;
+  }
+
   header ul,
   footer ul {
     list-style-type: none;
@@ -269,6 +278,35 @@
         background-color: var(--color-button-secondary-bg-hover);
         color: var(--color-button-secondary-text-hover);
       }
+    }
+  }
+
+  .form {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    .form__label,
+    .form__text {
+      font-size: var(--fs-18);
+      line-height: 1;
+    }
+
+    .form__label {
+      display: inline-block;
+      font-weight: 700;
+      flex: 100%;
+      text-align: left;
+    }
+
+    .form__text {
+      padding: 8px 20px;
+      border-radius: 5px;
+      flex: 3;
+    }
+
+    .form__button {
+      flex: 1;
     }
   }
 
@@ -612,7 +650,7 @@
     .blog__grid {
       display: grid;
       gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(calc(300 / 16 * 1rem), 100%), 1fr));
     }
 
     .blog__item {
